@@ -3,7 +3,7 @@
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
-  "version": "1.42",
+  "version": "1.43",
   "content_scripts": [
     {
       "matches": [
@@ -25,13 +25,16 @@
         "http://pdp.sit1a.ie:9000/*failsafe=true*",
         "http://pdp.sit1a.ru:9000/*failsafe=true*",
 
-        "*://*.sony.eu/*failsafe=true*",
         "*://*.sony.co.uk/*failsafe=true*",
-        "*://*.sony.ch/*failsafe=true*",
+        "*://*.sony.ch/de/*failsafe=true*",
+        "*://*.sony.ch/fr/*failsafe=true*",
         "*://*.sony.ie/*failsafe=true*",
         "*://*.sony.fr/*failsafe=true*",
-        "*://*.sony.be/*failsafe=true*",
+        "*://*.sony.be/fr/*failsafe=true*",
+        "*://*.sony.be/nl/*failsafe=true*",
         "*://*.sony.ru/*failsafe=true*",
+        "*://*.sony.eu/en/*failsafe=true*",
+        "*://*.sony.eu/te/*failsafe=true*",
         "*://*.sony.at/*failsafe=true*",
         "*://*.sony.ba/*failsafe=true*",
         "*://*.sony.bg/*failsafe=true*",
@@ -47,8 +50,9 @@
         "*://*.sony.kz/*failsafe=true*",
         "*://*.sony.lv/*failsafe=true*",
         "*://*.sony.lt/*failsafe=true*",
-        "*://*.sony.lu/*failsafe=true*",
-        "*://*.sony.mk/*failsafe=true*",
+        "*://*.sony.lu/de/*failsafe=true*",
+        "*://*.sony.lu/fr/*failsafe=true*",
+        "*://*.sony.com.mk/*failsafe=true*",
         "*://*.sony.nl/*failsafe=true*",
         "*://*.sony.no/*failsafe=true*",
         "*://*.sony.pl/*failsafe=true*",
@@ -59,11 +63,30 @@
         "*://*.sony.si/*failsafe=true*",
         "*://*.sony.es/*failsafe=true*",
         "*://*.sony.se/*failsafe=true*",
-        "*://*.sony.tr/*failsafe=true*",
-        "*://*.sony.ua/*failsafe=true*"
+        "*://*.sony.com.tr/*failsafe=true*",
+        "*://*.sony.ua/*failsafe=true*",
+        "*://*.sony.com.ar/*failsafe=true*",
+        "*://*.sony.com.bo/*failsafe=true*",
+        "*://*.sony.com.br/*failsafe=true*",
+        "*://*.sony.cl/*failsafe=true*",
+        "*://*.sony.com.co/*failsafe=true*",
+        "*://*.sony.co.cr/*failsafe=true*",
+        "*://*.sony.com.do/*failsafe=true*",
+        "*://*.sony.com.ec/*failsafe=true*",
+        "*://*.sony.com.sv/*failsafe=true*",
+        "*://*.sony.com.gt/*failsafe=true*",
+        "*://*.sony.com.hn/*failsafe=true*",
+        "*://*.sony.com.mx/*failsafe=true*",
+        "*://*.sony.com.pa/*failsafe=true*",
+        "*://*.sony.com.py/*failsafe=true*",
+        "*://*.sony.com.pe/*failsafe=true*",
+        "*://*.sony.com.pr/*failsafe=true*",
+        "*://*.sony.com.ve/*failsafe=true*",
+        "*://*.sony.com.ni/*failsafe=true*"
+
       ],
-      "css": ["failsafe.css"],
-      "js": ["jquery.js", "jquery-ui-1.10.3.custom.min.js", "failsafe.js", "contentscript.js"],
+      "css": [],
+      "js": ["jquery.js", "contentscript.js"],
       "run_at": "document_end"
     }
   ],
@@ -76,8 +99,6 @@
     "clipboardRead"
   ],
   "web_accessible_resources": [
-    "failsafe.js",
-    "failsafe.css"
   ],
   "background": {
     "scripts":["jquery.js", "background.js"]
