@@ -51,28 +51,45 @@ function disableClick(e) {
 }
 
 function enableDisableImageWidths(e){
+  $("#seeImageWidths").toggleClass("disabled");
   var exec_script = "iQInfo.toggleImageInfo()";
   chrome.tabs.executeScript(null,
       {code:exec_script});
-
+  bg.iQInfoDisplay = $("#seeImageWidths").hasClass("disabled");
   window.close()
 }
 
-function disableImageWidths(e){
-  // window.close()
+function enableDisableEditText(e){
+  
+  if (!$("#editText").hasClass("disabled"))
+  {
+    var exec_script = "editInline.enable()";
+    chrome.tabs.executeScript(null,
+        {code:exec_script});
+    $("#editText").addClass("disabled");
+    bg.editText = true;
+    window.close()
+  }
+  
 }
-var iQInfoDisplay = false
+var bg = {};//chrome.extension.getBackgroundPage();
+if (bg.iQInfoDisplay === undefined) bg.iQInfoDisplay = false;
+if (bg.editText === undefined) bg.iQInfoDisplay = false;
 $(document).on("ready", function(e){
    chrome.tabs.getSelected(null,function(tab) {
 
     urlObject = URLManipulator.create(tab.url); 
+
     if (urlObject.url.indexOf("failsafe=true") == -1){
         $("#failsafe").on("click", enableClick)
     }else{
         $("#failsafe").addClass("disabled");
         $("#failsafe").on("click", disableClick);
     }
+    if (bg.iQInfoDisplay == true) $("#seeImageWidths").addClass("disabled")
     $("#seeImageWidths").on("click", enableDisableImageWidths);
+    if (bg.iQInfoDisplay == true) $("#seeImageWidths").addClass("disabled")
+    $("#editText").on("click", enableDisableEditText);
   });
 })
 

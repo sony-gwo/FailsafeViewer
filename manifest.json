@@ -1,5 +1,5 @@
 {
-  "manifest_version": 7,
+  "manifest_version": 8,
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
@@ -85,8 +85,8 @@
         "*://*.sony.com.ni/*"
 
       ],
-      "css": ["iQInfo.css"],
-      "js": ["jquery.js", "contentscript.js", "iQInfo.js"],
+      "css": ["lib/iQInfo.css"],
+      "js": ["jquery.js", "lib/jquery.jeditable.js", "lib/iQInfo.js",  "lib/editInline.js", "contentscript.js"],
       "run_at": "document_end"
     }
   ],
@@ -98,8 +98,7 @@
     "clipboardWrite",
     "clipboardRead"
   ],
-  "web_accessible_resources": ["iQInfo.js"
-  ],
+  "web_accessible_resources": [],
   "background": {
     "scripts":["jquery.js", "background.js"]
   },
