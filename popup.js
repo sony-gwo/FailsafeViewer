@@ -47,40 +47,32 @@ function enableClick(e) {
 }
 
 function disableClick(e) {
-  urlObject.updateParam("failsafe", "false");
-  refreshPage(urlObject.url);
   window.close()
 }
 
-function enableImageWidths(e){
-    urlObject.updateParam("showImgInfo", "true");
-  refreshPage(urlObject.url);
+function enableDisableImageWidths(e){
+  var exec_script = "iQInfo.toggleImageInfo()";
+  chrome.tabs.executeScript(null,
+      {code:exec_script});
+
   window.close()
 }
 
 function disableImageWidths(e){
-  urlObject.updateParam("showImgInfo", "false");
-  refreshPage(urlObject.url);
-  window.close()
+  // window.close()
 }
-
+var iQInfoDisplay = false
 $(document).on("ready", function(e){
    chrome.tabs.getSelected(null,function(tab) {
+
     urlObject = URLManipulator.create(tab.url); 
     if (urlObject.url.indexOf("failsafe=true") == -1){
         $("#failsafe").on("click", enableClick)
-        $("#seeImageWidths").addClass("hidden");
     }else{
         $("#failsafe").addClass("disabled");
         $("#failsafe").on("click", disableClick);
-        
-        if (urlObject.url.indexOf("showImgInfo=true") > -1){
-          $("#seeImageWidths").addClass("disabled");
-          $("#seeImageWidths").on("click", disableImageWidths);
-        }else{
-          $("#seeImageWidths").on("click", enableImageWidths);
-        }
     }
+    $("#seeImageWidths").on("click", enableDisableImageWidths);
   });
 })
 

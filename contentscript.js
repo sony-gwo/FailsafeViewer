@@ -1,9 +1,8 @@
+
 //Main
 window.onload = function(){
-    //Add stylesheet
-    // var link = document.createElement('link');
-    // link.href =  chrome.extension.getURL('failsafe.css');
-    // link.rel = 'stylesheet';
-    // document.documentElement.insertBefore(link);
+    var s = document.createElement("script"); 
+    s.src = chrome.extension.getURL("iQInfo.js");
+    document.getElementsByTagName("head")[0].appendChild(s);
     console.log("FailsafeViewer Chrome Extension initialized");
 }
