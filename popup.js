@@ -47,6 +47,8 @@ function enableClick(e) {
 }
 
 function disableClick(e) {
+  urlObject.updateParam("failsafe", "false");
+  refreshPage(urlObject.url);
   window.close()
 }
 
