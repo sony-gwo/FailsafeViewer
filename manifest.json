@@ -25,6 +25,8 @@
         "http://pdp.sit1a.ie:9000/*",
         "http://pdp.sit1a.ru:9000/*",
 
+        "*://*.sonymobile.com/*",
+
         "*://*.sony.co.uk/*",
         "*://*.sony.ch/de/*",
         "*://*.sony.ch/fr/*",
