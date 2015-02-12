@@ -1,6 +1,6 @@
 
 .iq-info-div{
-  position:relative; 
+  position:absolute; 
   z-index:100;
   font-size:8px;
   line-height:8px;
