@@ -3,7 +3,7 @@
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
-  "version": "1.45",
+  "version": "1.46",
   "content_scripts": [
     {
       "matches": [
@@ -93,7 +93,6 @@
     }
   ],
   "update_url": "http://43.138.9.18/failsafe-chrome-extension/updates.xml",
-  //Private Key: http://43.138.9.18/failsafe-chrome-extension/FailsafeViewer.pem
   "permissions": [
     "activeTab",
     "background",
