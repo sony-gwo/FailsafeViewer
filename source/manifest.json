@@ -2,8 +2,8 @@
   "manifest_version": 8,
 
   "name": "Failsafe JSON Viewer",
-  "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
-  "version": "1.46",
+  "description": "This extension adds debug functionalities to Sony gwt sites.",
+  "version": "1.47",
   "content_scripts": [
     {
       "matches": [
@@ -95,9 +95,7 @@
   "update_url": "http://43.138.9.18/failsafe-chrome-extension/updates.xml",
   "permissions": [
     "activeTab",
-    "background",
-    "clipboardWrite",
-    "clipboardRead"
+    "background"
   ],
   "web_accessible_resources": [],
   "background": {

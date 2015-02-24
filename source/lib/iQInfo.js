@@ -12,9 +12,9 @@ var iQInfo = (function() {
             showIqInfoEnabled = true;
             $(".iq-img").each(function(index,elm){
                 var infoString = '';
-                var desktopSourceUrl = $(elm).data("src-desktop").replace("wid="+getURLParameter($(elm).data("src-desktop"), "wid"), "Original Size");
-                var tabletSourceUrl = $(elm).data("src-tablet").replace("wid="+getURLParameter($(elm).data("src-tablet"), "wid"), "Original Size");
-                var phoneSourceUrl = $(elm).data("src-phone").replace("wid="+getURLParameter($(elm).data("src-phone"), "wid"), "Original Size");
+                var desktopSourceUrl = $(elm).data("src-desktop").replace("wid="+getURLParameter($(elm).data("src-desktop"), "wid"), "scl=1");
+                var tabletSourceUrl = $(elm).data("src-tablet").replace("wid="+getURLParameter($(elm).data("src-tablet"), "wid"), "scl=1");
+                var phoneSourceUrl = $(elm).data("src-phone").replace("wid="+getURLParameter($(elm).data("src-phone"), "wid"), "scl=1");
 
                 var wid= "", widPrefix = "w:", hei = "", heiPrefix = "h:";
 
